@@ -1,0 +1,61 @@
+/*.software {
+	background:url(software.png);
+	width: 1204px;
+	height: 1211px;
+
+}
+*/
+/* Display Airplane Safety Picture */
+@media screen
+	and (min-width: 1200px) {
+		.software {
+			width: 450px;
+			height: 575px;
+			background:url(software.png) 0px 0px;
+		}
+	}
+
+/* Display top right image */
+@media screen
+	and (min-width: 1000px)
+	and (max-width: 1200px) {
+		.software {
+			width: 410px;
+			height: 575px;
+			background:url(software.png) -450px 0px;
+		}
+
+}
+
+/* Display second image in left column */
+@media screen
+	and (min-width: 800px)
+	and (max-width: 1000px) {
+		.software {
+			width: 335px;
+			height: 575px;
+			background:url(software.png) -875px 0px;
+		}
+	}
+
+/* Display second image in right column */
+@media screen
+	and (min-width: 600px)
+	and (max-width: 800px) {
+		.software {
+			width: 720px;
+			height: 620px;
+			background:url(software.png) 0px 620px;
+		}
+	}
+
+/* Displthird image in left column */
+@media screen
+	and (max-width: 600px) {
+		.software {
+			width: 493px;
+			height: 620px;
+			background:url(software.png) -715px 622px;
+		}
+	}
+
