@@ -1,6 +1,7 @@
 
   function initMap() {
         var map;
+
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 16,
           center: new google.maps.LatLng(42.352271, -71.05524200000001),
@@ -9,7 +10,7 @@
 
 		var myLat = 0;
 		var myLng = 0;
-
+		var me = new google.maps.LatLng(myLat, myLng)
 				if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
 					navigator.geolocation.getCurrentPosition(function(position) {
 						myLat = position.coords.latitude;
@@ -36,6 +37,7 @@
 					 alert("Geolocation is not supported by your web browser.  What a shame!");
 				 }
 
+
         var iconBase = '';
         var icons = {
           station: {
@@ -47,7 +49,7 @@
         };
 
         var features = [
-          {
+          { 
             position: new google.maps.LatLng( 42.352271,-71.05524200000001),
             type: 'station'
           }, {
@@ -78,7 +80,7 @@
             position: new google.maps.LatLng(42.29312583, -71.121815),
             type: 'station'
           }, {
-            position: new google.maps.LatLng(42.39674, -71.142483),
+            position: new google.maps.LatLng(42.39674, -71.121815),
             type: 'station'
           }, {
             position: new google.maps.LatLng(42.395428,-71.08617653),
@@ -139,13 +141,26 @@
             icon: icons[feature.type].icon,
             map: map
           });
-          marker.addListener("click", getData("place-sstat"));
+          //marker.addListener("click", getData("place-sstat"));
           console.log("ooo");
           //add listener, do request, get data
         });
-      }
 
-
+      var smallestDistance = google.maps.geometry.spherical.computeDistanceBetween(me, features[10].position);
+      console.log(smallestDistance);
+      
+       features.forEach(function(feature) {
+        if(google.maps.geometry.spherical.computeDistanceBetween(me, feature.position) < smallestDistance){
+        	smallestDistance = google.maps.geometry.spherical.computeDistanceBetween(me, feature.position);
+        }
+          
+ 
+          //marker.addListener("click", getData("place-sstat"));
+          console.log("ooo");
+          //add listener, do request, get data
+        });
+			console.log(smallestDistance);
+}
 
 
 
