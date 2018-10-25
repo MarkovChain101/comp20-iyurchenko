@@ -22,74 +22,92 @@
 
         var features = [
           { 
+          	name: 'South Station',
           	station_id: 'place-sstat',
             position: new google.maps.LatLng(42.352271,-71.05524200000001),
             type: 'station'
           }, {
+          	name: 'Andrews'
           	station_id: 'place-andrw',
             position: new google.maps.LatLng(42.330154,-71.057655),
             type: 'station'
           }, {
+          	name: 'Porter Square',
           	station_id: 'place-portr',
             position: new google.maps.LatLng(42.3884, -71.11914899999999),
             type: 'station'
           }, {
+          	name: 'Harvard Square'
           	station_id: 'place-harsq',
             position: new google.maps.LatLng(42.373362, -71.118956),
             type: 'station'
           }, {
+          	name: 'JFK/UMass'
           	station_id: 'place-jfk',
             position: new google.maps.LatLng(42.320685, -71.052391),
             type: 'station'
           }, {
+          	name: 'Savin Hill',
           	station_id: 'place-shmnl',
             position: new google.maps.LatLng(42.31129, -71.0624242),
             type: 'station'
           }, {
+          	name: 'Davis Square'
           	station_id: 'place-davis',
             position: new google.maps.LatLng(42.35639457, -71.056967),
             type: 'station'
           }, {
+          	name: 'Alewife',
           	station_id: 'place-alfcl',
             position: new google.maps.LatLng(42.342622, -71.029583),
             type: 'station'
           }, {
+          	name: 'Kendall/MIT',
           	station_id: 'place-knncl',
             position: new google.maps.LatLng(42.275275,-71.06573796000001),
             type: 'station'
           }, {
+          	name: 'Charles/MGH',
           	station_id: 'place-chmnl',
             position: new google.maps.LatLng(42.29312583, -71.121815),
             type: 'station'
           }, {
+          	name: 'Downtown Crossing',
           	station_id: 'place-dwnxg',
             position: new google.maps.LatLng(42.39674, -71.121815),
             type: 'station'
           }, {
+          	name: 'Quincy Center',
           	station_id: 'place-qnctr',
             position: new google.maps.LatLng(42.395428,-71.142483),
             type: 'station'
           }, {
+          	name: 'Quincy Adams',
           	station_id: 'place-qamnl',
           	position: new google.maps.LatLng(42.36249079,-71.08617653),
           	type: 'station'
 		  }, {
+		  	name: 'Ashmont'
 		  	station_id: 'place-asmnl',
             position: new google.maps.LatLng(42.361166,-71.070628),
             type: 'station'
           }, {
+          	name: 'Wollaston',
           	station_id: 'place-wlsta',
             position: new google.maps.LatLng(42.355518, -71.060225),
             type: 'station'
           }, {
+          	name: 'Fields Corner',
           	station_id: 'place-fldcr',
             position: new google.maps.LatLng(42.251809, -71.005409),
             type: 'station'
           }, {
+          	name: 'Central Square',
           	station_id: 'place-cntsq',
             position: new google.maps.LatLng(42.233391, -71.007153),
             type: 'station'
           }, {
+          	name: 'Braintree',
           	station_id: 'place-brntn',
             position: new google.maps.LatLng(42.284652,  -71.06448899999999),
             type: 'station'
@@ -165,13 +183,15 @@
 				// Create a marker
 				marker = new google.maps.Marker({
 					position: me,
-					title: "Here I Am!"
+					title: "The closest Station is: " + closestFeature +  " which is " + smallestDistance/1600 + "miles away",
+					closestStation: closestFeature,
+					curClosestDistance: smallestDistance/1600
 				});
 				marker.setMap(map);
 					
 				// Open info window on click of marker
 				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
+					infowindow.setContent(marker.title);// + "/n" + "The closest Station is: " + marker.closestStation +  " which is " + marker.curClosestDistance);
 					infowindow.open(map, marker);
 					});
 				}
