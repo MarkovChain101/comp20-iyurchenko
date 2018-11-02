@@ -6,13 +6,26 @@
     <meta charset="utf-8" />
     <title>Captain's Log</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        // Your work will be done here...
-    </script>
+    
 </head>
 
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        // Execute a function when the user releases a key on the keyboard
+
+    var msg = document.getElementById("msg");
+    console.log(msg);
+    msg.addEventListener("keyup",function(event) {
+  // Cancel the default action, if needed
+    event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
+    </script>
     <h1>Captain's Log</h1>
     <h3>New entry: <input type="text" id="msg" name="msg" size="30" /></h3>
     <div id="log"></div>
