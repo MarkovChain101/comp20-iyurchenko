@@ -9,18 +9,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         // Execute a function when the user releases a key on the keyboard
+$(document).ready(function() {
+        displayLog();
+    });
 
-    var msg = document.getElementById("msg");
-    console.log(msg);
-    msg.addEventListener("keyup",function(event) {
-  // Cancel the default action, if needed
-    event.preventDefault();
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Trigger the button element with a click
-    document.getElementById("myBtn").click();
-  }
-});
+    function displayLog() {
+        var curDate = new Date();
+        localStorage.setItem(curDate, $("#msg").val());
+
+        for (var val in localStorage) {
+            if (localStorage.getItem(val) != null) {
+                var input = "<p>" + val + " - " + localStorage.getItem(val) + "</p>";
+                $("#log").prepend(input);
+            }
+         }
+
+    $("#msg").keyup(function(val){
+        if(val.keyCode == 13) {
+            var input = "<p>" + curDate + " - " + $("#msg").val();
+            $("#log").prepend(input);
+            localStorage.setItem(date, $("#msg").val());
+            $("#msg").val("");
+        }
+    });
+    }
     </script>
 </head>
 
