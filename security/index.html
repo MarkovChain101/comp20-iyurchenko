@@ -67,33 +67,32 @@ Severity of issue (e.g., low, medium , or high). Justify your answer.
 
 <ol>
 
-	<li>High. Scripts can perform an almost infinite amount of tasks. There is very little that cannot be done with scripts including data mining.</li>
+	<li>Medium. Scripts can perform an almost infinite amount of tasks. There is very little that cannot be done with scripts including data mining.</li>
 	<li>High. Cross Origin Resource sharing can lead to a complete hijacking of all data in the database as well as potentially overloading the server with junk data</li>
 	<li>High. While this leaves the website prone to injection attacks, it also allows the user to run nodejs commands to access user data and otherwise hijack the system </li>
 </ol>
 <p>
-
-Issues Found - For each issue that you find, document: <br/>
-Issue (e.g., database injection, really bad programming practice)
+Description of issue. How did you find it? A screenshot of problem is excellent.
 </p>
 
 <ol>
 
-	<li>Cross site scripting is allowed</li>
-	<li>CORS (Cross Origin Resource Sharing) is enabled </li>
-	<li>The input is not verified for the username </li>
+	<li>The first thing I do is look at the headers, this was an easy thing to find.</li>
+	<li>Same as above</li>
+	<li>We learned in class to never trust user input; I decided to check if my partner was following this rule.  </li>
 </ol>
 <p>
 
-Issues Found - For each issue that you find, document: <br/>
-Issue (e.g., database injection, really bad programming practice)
+Proof of vulnerability. Show pictures or it didn't happen.
 </p>
 
 <ol>
 
-	<li>Cross site scripting is allowed</li>
-	<li>CORS (Cross Origin Resource Sharing) is enabled </li>
-	<li>The input is not verified for the username </li>
+	<li><img alt="Proof of vulnerability" src="IMG_1458(3).jpg">
+		<img alt="Proof of vulnerability" src="IMG_1459(1).jpg"></li>
+	<li>TA’s mentioned that a description of this issue would be acceptable in lieu of pictures. The danger of cross origin resource sharing is that you could insert as much junk data as you wish to the associated server, which inevitably will crash the server giving you unexpected behaviour. Also, in the case of secure data being transferred- unlimited CORS could give malicious rando’s access to private information.
+ </li>
+	<li> <img alt="Proof of vulnerability" src="IMG_1473(1).jpg"></li>
 </ol>
 <p>
 
