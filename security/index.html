@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
 <title>
-	Resume
+	Assignment 4
 </title>
 <body>
-<h1>Ilya Yurchenko</h1>
+<h1>Assignment 4</h1>
 
 <p>
-Education:<br/>
-Tufts University, Medford, MA, Classs of 2020
-	Bachelor in Physics and Computer Science. GPA: 3.65
+Introduction - Provide a description of the product and what you were hired to do <br/>
+ 
+The product I am testing is an implementation of a server-based extension to the original 2048 game. This implementation took in data from the game manager and stored it using mongodb. This allowed the user to go back and look at both high scores and score that were attributed to a certain username. I have been tasked with finding and describing several security flaws in the system
 
-
-
-Relevant Coursework:  Data Structures, Machine Structure and Assembly Language, Web Programing, Discrete Mathematics, Differential Equations, Multivariable Calculus
 
 </p>
 
@@ -21,9 +18,23 @@ Relevant Coursework:  Data Structures, Machine Structure and Assembly Language, 
 
 
 <p>
-PROJECTS <br/>
-Automated Trading Algorithm, April 2018
+Methodology - Describe your methodology pen testing the application, including the tools that you used <br/>
+
+	My general approach to finding weaknesses in my partners work was to first look at the headers which were used in their work and then consider what sort of tools I could use to take advantage of the allowances that came along with those headers <br/>
+
+	Curl- I used curl in order to take advantage of the cross site scripting which was allowed by my partner. I was able to send data to the server in shifty and mysterious ways which I will discuss further. Curl in general allows you to access url’s in a way which gives you comparable functionality to using a browser. <br/>
+
+	Injection- I used injection to make the server run nodejs commands. <br/>
+
 </p>
+
+<p>
+Abstract of Findings - Provide an overview of all the security and privacy issues you identified. This section should be written for non-technical managers who do not have technical expertise and do not have time to read the entire document. Write this section using lay language. <br/>
+
+
+	I have found that the program has two major flaws. It does not to a diligent enough job in terms of testing the input of the user (which allows a malicious hacker to put in all sorts of input to the website). Additionally, the developer did not to a good enough job of restricting access to the server and to the post and get methods. This means that a malicious user can get access to all of the data in the server- they can both insert as much data as possible and use scripts and all sort of injections. 
+</p>
+
 <ul>
 	<li>Implemented a script in R based on the Metropolis-Hastings algorithm</li>
 	<li>Used to determine when to buy and short a certain stock based on historical data</li>
